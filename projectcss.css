@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: Poppins;
+    background: url(/Image/angkorwat) no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: calc(100vh - 80px);
+
+}
+nav{
+    /* background-color: rgb(141, 108, 36); */
+    height: 80px;
+    width: 100%;
+    background: #e8c811;
+    position: fixed;
+    z-index: 1000;
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+nav ul{
+    float: right;
+    margin-right: 20%;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+a.active,a:hover{
+    background: #ac9c0e;
+    transition: .5s;
+}
+nav ul .dropbtn{
+    background-color: #ac9c0e;
+    color: white;
+    padding: 9px 13px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    max-width: 200px;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: rgb(196, 184, 23);}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown:hover .dropbtn{
+    background-color: #b9b72d;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+
+}
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover, a.active{
+        background: none;
+        color: rgb(255, 255, 255);
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+.wrapper{
+    padding: 300px 10%;
+}
+#card-area{
+    padding: 50px 0;
+}
+.box-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap:40px;
+    margin-top: 50px;
+}
+.box{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px black;
+}
+.box img{
+    width: 100%;
+    height: 240px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.cards .wrapper .box-area .box h3{
+    color: rgb(214, 211, 25);
+    text-align: center;
+    padding-top: 5px;
+}
+.cards .wrapper .box-area .box a{
+    color: #fff;
+    margin-left: 140px;
+    font-size: 10px;
+}
+.overlay{
+    height: 0;
+    width: 100%;
+    background: linear-gradient(transparent, #1c1c1c 58%);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.overlay h3{
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 80%;
+    font-family: Koulen;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+.overlay a{
+    margin-top: 5px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    background: #c00b0b;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+}
+.box:hover img{
+    transform: scale(1.2);
+}
+.box:hover .overlay{
+    height: 120%;
+}
+section{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: calc(60vh - 80px);
+}
+section .textbox{
+    left: 15%;
+    width: 70%;
+    position: absolute;
+    top: 20%;
+}
+section .textbox h1{
+    font-size: 40px;
+    margin-top: 140px;
+    padding-left: 50px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: aqua;
+}
+section .textbox p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.about-content > h1{
+padding-left: 200px;
+color: aqua;
+font-size: 40px;
+padding-top: 200px;
+}
+.about-content > h3{
+    font-size: 16px;
+    font-family: Bebas Neue;
+    letter-spacing: 1px;
+    padding-left: 200px;
+    color: white;
+}
+.about-content > h2{
+    font-size: 25px;
+    font-family: Bebas Neue;
+    letter-spacing: 1px;
+    padding-left: 200px;
+    color: #c00b0b;
+}
+.teamcards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.boxteam{
+    background-color: #08212bde;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    box-shadow: 0 4px 10px black;
+    text-align: center;
+}
+.boxteam img{
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+.boxteam h2{
+    font-size: 25px;
+    font-family: Bebas Neue;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.contacts{
+    background: linear-gradient(135dg, #ffff, #e0eafc);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    padding: 40px;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.756);
+    margin: 40px auto;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.contacts:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.info-section h1{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+.info-section h1::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ffcc00;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.info-section p{
+    font-size: 1.2em;
+    margin: 15px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+.info-section p:hover{
+    color: #afac0f;
+}
+.info-section .highlight{
+    color: #afac0f;
+    font-weight: bold;
+    margin-left: 1.5em;
+}
+.info-section i{
+    color: #afac0f;
+    margin-right: 10px;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+.info-section p:hover i{
+    transform: scale(1.1);
+}
